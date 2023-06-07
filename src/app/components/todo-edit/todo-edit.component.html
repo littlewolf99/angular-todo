@@ -1,0 +1,33 @@
+<div>
+    <h1>{{ todo.id ? "Edit" : "Add" }} Todo</h1>
+    <form class="submit-form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          [(ngModel)]="todo.title"
+          name="title"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="Detail">Detail</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="todo.detail"
+          name="description"
+        />
+      </div>
+  
+      <button class="btn btn-success" type="submit">
+        {{ todo.id ? "Update" : "Create" }}
+      </button>
+      <button routerLink="/todos/">Back to lists</button>
+    </form>
+  </div>
+  
